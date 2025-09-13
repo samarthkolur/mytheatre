@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-module.exports = {
-  output: 'export',
-}
+output: 'export',
+  basePath: '/mytheatre',  // replace <repo-name> with your repo
+  assetPrefix: '/mytheatre/',
 };
 
 export default nextConfig;
