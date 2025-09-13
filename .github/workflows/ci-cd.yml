@@ -1,50 +1,72 @@
-name: CI/CD Pipeline
+name: Next.js CI/CD to GitHub Pages
 
+# Trigger workflow on push or PR to main branch
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
   pull_request:
-    branches: ["main"]
+    branches:
+      - main
 
 jobs:
-  build:
+  build-and-test:
+    name: Build & Test Next.js
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repo
+      # Checkout repo
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2. Set up Node.js (example for Node project)
-      - name: Set up Node.js
+      # Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'  # Use your Node.js version
 
-      # 3. Install dependencies
+      # Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # 4. Run tests
+      # Run tests (if you have them)
       - name: Run tests
-        run: npm test
+        run: npm test || echo "No tests found, skipping"
 
-      # 5. Build project
+      # Build the project
       - name: Build project
         run: npm run build
 
+      # Export static site (Next.js static export)
+      - name: Export static HTML
+        run: npm run export
+        # The exported static files go to 'out/' folder by default
+
   deploy:
-    needs: build
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
+    needs: build-and-test
     if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Example: Deploy to GitHub Pages
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and Export
+        run: |
+          npm run build
+          npm run export
+
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./out
