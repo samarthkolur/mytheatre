@@ -2,12 +2,12 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { AuthProvider } from "@/context/AuthContext"; // Import from the new location
-
+import { Navbar } from "@/components/navBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Firebase Auth App",
-  description: "Next.js app with Firebase Authentication",
+  title: "MyTheatre",
+  description: "Book Theatre Tickets Easily",
 };
 
 export default function RootLayout({
