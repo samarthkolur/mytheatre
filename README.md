@@ -1,109 +1,38 @@
-# MyTheatre
-
-**MyTheatre** is a web application that allows users to **book theatre tickets easily and quickly**. It features a sleek and modern interface with a Hero carousel, trending shows section, and a responsive navigation bar.
-
----
-
-## Table of Contents
-
-- [Demo](#demo)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-- [Folder Structure](#folder-structure)
-- [Future Improvements](#future-improvements)
-- [License](#license)
-
----
-
-## Demo
-
-![MyTheatre Screenshot](link-to-screenshot-if-any)
-
----
-
-## Features
-
-- **User Authentication**: Sign In and Sign Up functionality.
-- **Hero Carousel**: Dynamic carousel for showcasing top shows or events.
-- **Trending Section**: Displays trending theatre shows.
-- **Responsive Design**: Works seamlessly on mobile, tablet, and desktop.
-- **Loading Overlay**: Smooth loading screen when navigating between pages.
-
----
-
-## Tech Stack
-
-- **Frontend**: Next.js (React 18)
-- **Styling**: Tailwind CSS
-- **Components**: ShadCN UI (Card, Button, Carousel)
-- **Routing**: Next.js App Router (`useRouter`)
-- **State Management**: React `useState` and `useRef`
-- **Animations**: Embla Carousel Autoplay
-
----
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js v18+
-- npm or yarn
-
-### Installation
+First, run the development server:
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/mytheatre.git
-
-# Navigate to project folder
-cd mytheatre
-
-# Install dependencies
-npm install
-# or
-yarn install
-
-# Run the development server
 npm run dev
 # or
 yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
----
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Folder Structure
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-```
-mytheatre/
-│
-├─ components/
-│   ├─ Hero.js
-│   ├─ Trending.js
-│   ├─ Loading.js
-│   └─ ui/ (Card, Button, Carousel components)
-│
-├─ pages/ or app/
-│   ├─ page.js (Home)
-│   ├─ login.js
-│   └─ register.js
-│
-├─ public/ (images, icons)
-├─ styles/
-├─ package.json
-└─ README.md
-```
+## Learn More
 
----
+To learn more about Next.js, take a look at the following resources:
 
-## Future Improvements
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- Integrate a **backend API** for real-time ticket booking.
-- Add **user profile management**.
-- Implement **payment gateway** for booking tickets online.
-- Add **search and filter** for shows.
-- Improve **accessibility** and ARIA support.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
----
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# test comment
